@@ -1,0 +1,43 @@
+{
+  "__version__": "3.0.5",
+  "game": {
+    "app_id": "671482236",
+    "name": "TrucoPokerGame",
+    "c_id": "0"
+  },
+  "appConfigMaps": [
+    {
+      "app_id": "UNKNOW",
+      "config_id": "fce87c"
+    },
+    {
+      "app_id": "671482236",
+      "config_id": "f8897a"
+    }
+  ],
+  "configs": [
+    {
+      "app_id": "UNKNOW",
+      "config_id": "fce87c",
+      "config_name": "Default",
+      "config_remarks": "",
+      "services": []
+    },
+    {
+      "app_id": "671482236",
+      "config_id": "f8897a",
+      "config_name": "Default",
+      "config_remarks": "",
+      "services": [
+        {
+          "service_id": "235",
+          "enable": true,
+          "param": {
+            "app_id": "671482236",
+            "store_id": "Android"
+          }
+        }
+      ]
+    }
+  ]
+}

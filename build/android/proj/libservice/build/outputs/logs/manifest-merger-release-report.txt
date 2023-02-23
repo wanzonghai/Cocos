@@ -1,0 +1,49 @@
+-- Merging decision tree log ---
+manifest
+ADDED from E:\Cocos\2.22\TrucoPokerGame\build\android\proj\libservice\AndroidManifest.xml:1:1-6:12
+INJECTED from E:\Cocos\2.22\TrucoPokerGame\build\android\proj\libservice\AndroidManifest.xml:1:1-6:12
+INJECTED from E:\Cocos\2.22\TrucoPokerGame\build\android\proj\libservice\AndroidManifest.xml:1:1-6:12
+INJECTED from E:\Cocos\2.22\TrucoPokerGame\build\android\proj\libservice\AndroidManifest.xml:1:1-6:12
+INJECTED from E:\Cocos\2.22\TrucoPokerGame\build\android\proj\libservice\AndroidManifest.xml:1:1-6:12
+INJECTED from E:\Cocos\2.22\TrucoPokerGame\build\android\proj\libservice\AndroidManifest.xml:1:1-6:12
+INJECTED from E:\Cocos\2.22\TrucoPokerGame\build\android\proj\libservice\AndroidManifest.xml:1:1-6:12
+	package
+		ADDED from E:\Cocos\2.22\TrucoPokerGame\build\android\proj\libservice\AndroidManifest.xml:1:70-97
+		INJECTED from E:\Cocos\2.22\TrucoPokerGame\build\android\proj\libservice\AndroidManifest.xml
+		INJECTED from E:\Cocos\2.22\TrucoPokerGame\build\android\proj\libservice\AndroidManifest.xml
+	android:versionName
+		INJECTED from E:\Cocos\2.22\TrucoPokerGame\build\android\proj\libservice\AndroidManifest.xml
+		ADDED from E:\Cocos\2.22\TrucoPokerGame\build\android\proj\libservice\AndroidManifest.xml:1:1-6:12
+		INJECTED from E:\Cocos\2.22\TrucoPokerGame\build\android\proj\libservice\AndroidManifest.xml
+	android:versionCode
+		INJECTED from E:\Cocos\2.22\TrucoPokerGame\build\android\proj\libservice\AndroidManifest.xml
+		ADDED from E:\Cocos\2.22\TrucoPokerGame\build\android\proj\libservice\AndroidManifest.xml:1:1-6:12
+		INJECTED from E:\Cocos\2.22\TrucoPokerGame\build\android\proj\libservice\AndroidManifest.xml
+	xmlns:android
+		ADDED from E:\Cocos\2.22\TrucoPokerGame\build\android\proj\libservice\AndroidManifest.xml:1:11-69
+uses-permission#android.permission.INTERNET
+ADDED from E:\Cocos\2.22\TrucoPokerGame\build\android\proj\libservice\AndroidManifest.xml:3:5-66
+	android:name
+		ADDED from E:\Cocos\2.22\TrucoPokerGame\build\android\proj\libservice\AndroidManifest.xml:3:22-64
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from E:\Cocos\2.22\TrucoPokerGame\build\android\proj\libservice\AndroidManifest.xml:4:5-78
+	android:name
+		ADDED from E:\Cocos\2.22\TrucoPokerGame\build\android\proj\libservice\AndroidManifest.xml:4:22-76
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from E:\Cocos\2.22\TrucoPokerGame\build\android\proj\libservice\AndroidManifest.xml:5:5-78
+	android:name
+		ADDED from E:\Cocos\2.22\TrucoPokerGame\build\android\proj\libservice\AndroidManifest.xml:5:22-76
+uses-sdk
+INJECTED from E:\Cocos\2.22\TrucoPokerGame\build\android\proj\libservice\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from E:\Cocos\2.22\TrucoPokerGame\build\android\proj\libservice\AndroidManifest.xml
+INJECTED from E:\Cocos\2.22\TrucoPokerGame\build\android\proj\libservice\AndroidManifest.xml
+INJECTED from E:\Cocos\2.22\TrucoPokerGame\build\android\proj\libservice\AndroidManifest.xml
+INJECTED from E:\Cocos\2.22\TrucoPokerGame\build\android\proj\libservice\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from E:\Cocos\2.22\TrucoPokerGame\build\android\proj\libservice\AndroidManifest.xml
+		ADDED from E:\Cocos\2.22\TrucoPokerGame\build\android\proj\libservice\AndroidManifest.xml
+		INJECTED from E:\Cocos\2.22\TrucoPokerGame\build\android\proj\libservice\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from E:\Cocos\2.22\TrucoPokerGame\build\android\proj\libservice\AndroidManifest.xml
+		ADDED from E:\Cocos\2.22\TrucoPokerGame\build\android\proj\libservice\AndroidManifest.xml
+		INJECTED from E:\Cocos\2.22\TrucoPokerGame\build\android\proj\libservice\AndroidManifest.xml
