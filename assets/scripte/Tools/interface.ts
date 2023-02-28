@@ -3,6 +3,7 @@ export interface IPokerInfo{
     count: number;
     /**花色 */
     flowerColor: number;
+  
 }
 
 export interface IPlayerInfo{

@@ -6,8 +6,10 @@ import { manage_event } from "./manage_event";
 
 export default class manager_ai extends Singleton<manager_ai> {
     public aiInfo: IPlayerInfo = null;
+   
     public init(): void {
-        this.aiInfo  = { name: 'kalami',score:0,avatar: 'bg05',adree:2};
+        this.aiInfo = { name: 'kalami', score: 0, avatar: 'bg05', adree: 2 };
+        
     }
     /**Ai抽牌 */
     public aiDrawCard() {

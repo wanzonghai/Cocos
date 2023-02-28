@@ -1,3 +1,4 @@
+import { assetManager } from 'cc';
 import { _decorator, Component, Node, SpriteFrame, Sprite, tween, Quat, quat, game } from 'cc';
 import { NodeEventType } from '../../../@types/packages/scene/@types/cce/public/event-enum';
 import apic from '../Commons/apic';
@@ -11,9 +12,9 @@ const { ccclass, property } = _decorator;
 export class item_poker extends Component {
 
     public itemInfo: string =  'poker';
-    
+   
     onLoad() {
-        
+       
     }
     onEnable() {
         
@@ -74,8 +75,17 @@ export class item_poker extends Component {
         if (!apic.resMg.spriteFrames) return;
         this.node.getComponent(Sprite).spriteFrame = apic.resMg.spriteFrames.getSpriteFrame(itemSpriteFrame);
     }
-    onDestroy () {
-        
+    onDestroy() {
+        /**移除时减少计数 */
+        this.node.getComponent(Sprite).spriteFrame.decRef();
+        console.log("spriteFrame.refCount : " + this.node.getComponent(Sprite).spriteFrame.refCount);
+        /**初始化组件 */
+        this.node.getComponent(Sprite).spriteFrame = null;
+
+        //在下一帧打印 assets
+        this.scheduleOnce(()=>{
+            console.log(assetManager.assets);
+        });
     }
 
 
