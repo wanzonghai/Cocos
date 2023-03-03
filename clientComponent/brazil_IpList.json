@@ -1,0 +1,17 @@
+{
+	"IpMaxCount":1,
+	"ServerList": {
+	    "id1":"217",
+		"ip1":"login2.y5mrsc7p.com:2701|1"
+	},
+	"networkData":{
+	   "1":30000,
+	   "2":3000,
+	   "3":3000,
+	   "4":3000,
+       "5":3000,
+       "6":3000,
+	   "7":10
+	},
+	"getIpUrl":"https://ifconfig.me/ip"
+}

@@ -1,0 +1,11 @@
+return 
+{
+["lScoreAmount"]=
+100, 
+["lScoreCondition"]=
+30, 
+["MaxNumber"]=
+1, 
+["byRestTimes"]=
+1, 
+}
