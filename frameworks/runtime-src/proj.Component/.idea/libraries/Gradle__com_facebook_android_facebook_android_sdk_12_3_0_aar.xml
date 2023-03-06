@@ -3,6 +3,9 @@
     <CLASSES>
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/facebook-android-sdk-12.3.0.aar/27909519f7c7815e59ca026eb86bbb42/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/facebook-android-sdk-12.3.0.aar/27909519f7c7815e59ca026eb86bbb42/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/facebook-android-sdk-12.3.0.aar/574fa7759222817bb25f5ee529c48ea0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/facebook-android-sdk-12.3.0.aar/574fa7759222817bb25f5ee529c48ea0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/facebook-android-sdk-12.3.0.aar/574fa7759222817bb25f5ee529c48ea0/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

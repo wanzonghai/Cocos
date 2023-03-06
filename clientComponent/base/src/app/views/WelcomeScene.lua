@@ -33,7 +33,7 @@ local luaj
 local BRIDGE_CLASS_ANDROID
 if g_TargetPlatform == cc.PLATFORM_OS_ANDROID then
     luaj = require "cocos.cocos2d.luaj"
-    BRIDGE_CLASS_ANDROID = "org/cocos2dx/lua/AppPokerActivity"
+    BRIDGE_CLASS_ANDROID = "game/poker/AppPokerActivity"
 end
 
 StringUtil = {}

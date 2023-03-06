@@ -69,7 +69,7 @@ FunctionName = {
 }
 
 BridgeClassName = {
-    BRIDGE_CLASS_ACTIVITY = "org/cocos2dx/lua/AppPokerActivity",
+    BRIDGE_CLASS_ACTIVITY = "game/poker/AppPokerActivity",
     BRIDGE_CLASS_AF = "truco/three/afsdk/AfSdk",
     BRIDGE_CLASS_ADJUST = "truco/three/adjustsdk/AdjustPokerSdk",
     BRIDGE_CLASS_FIREBASE = "truco/three/firebasesdk/MyFirebaseMessagingService",

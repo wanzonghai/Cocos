@@ -79,18 +79,18 @@ android {
                 keyAlias RELEASE_KEY_ALIAS
                 keyPassword RELEASE_KEY_PASSWORD
             }
-            keyAlias 'trucoPoker'
+            keyAlias 'key0'
             keyPassword '123456'
-            storeFile file('../key/trucoPoker.jks')
+            storeFile file('../key/key.jks')
             storePassword '123456'
             v1SigningEnabled true
             v2SigningEnabled true
         }
         debug {
-            storeFile file('../key/trucoPoker.jks')
+            storeFile file('../key/key.jks')
             storePassword '123456'
             keyPassword '123456'
-            keyAlias = 'trucoPoker'
+            keyAlias = 'key0'
             v1SigningEnabled true
             v2SigningEnabled true
         }

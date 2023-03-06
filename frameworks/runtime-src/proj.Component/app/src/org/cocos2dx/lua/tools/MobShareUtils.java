@@ -10,7 +10,7 @@ import android.util.Log;
 import androidx.core.content.FileProvider;
 
 import org.cocos2dx.lib.Cocos2dxLuaJavaBridge;
-import org.cocos2dx.lua.AppPokerActivity;
+import game.poker.AppPokerActivity;
 import org.json.JSONObject;
 
 import java.io.File;

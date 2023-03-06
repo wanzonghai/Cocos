@@ -9,7 +9,7 @@ import androidx.annotation.NonNull;
 import com.facebook.FacebookSdk;
 import com.facebook.appevents.AppEventsLogger;
 
-import org.cocos2dx.lua.AppPokerActivity;
+import game.poker.AppPokerActivity;
 
 public class PTools {
     /**

@@ -13,7 +13,7 @@
         <package android:name="org.telegram.messenger"/>
     </queries>
     <application
-        android:name="org.cocos2dx.lua.GamePokerApplication"
+        android:name="game.poker.GamePokerApplication"
         android:label="@string/app_name"
         android:allowBackup="true"
         android:usesCleartextTraffic="true"
@@ -26,7 +26,7 @@
         <meta-data android:name="com.facebook.sdk.ClientToken" android:value="@string/facebook_client_token"/>
         <activity
             android:exported="true"
-            android:name="org.cocos2dx.lua.AppPokerActivity"
+            android:name="game.poker.AppPokerActivity"
             android:screenOrientation="landscape"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/app_name"

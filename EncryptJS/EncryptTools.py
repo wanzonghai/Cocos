@@ -6,7 +6,7 @@ import string
 #混淆path
 ROOT_PATH = "F:\\BaiduNetdiskDownload\\cocos-creator-mj_hotupdate\\"
 #加密密码，DES长度只能是8，AES的长度是16，尽量使用小写字母+数字
-ZIP_PWD = "mfjjwnncws2s2afd"
+ZIP_PWD = "adkielauisva98jf"
 #加密后的文件名，任意文件名都可以，可以带后缀，如:.so,.mp3,.png,.jpg等，也可不带后缀
 ZIP_ENCTYPT_FILENAME = "opesjreki_yeah"
 #当前是加密原有代码资源(true)?还是打混淆垃圾文件(false)
@@ -22,8 +22,8 @@ OTHER_FILES_ENCRYPT_PATH = ROOT_PATH + "kenbuild\\jsb-link\\other\\"
 #加密后文件存放地址
 #ENCRYPT_FILE_PATH = (ROOT_PATH + "kenbuild\\jsb-link\\" + ZIP_ENCTYPT_FILENAME)
 
-ZIP_PATH = "F:\\bx_game_TrucoKing_mjb_2\\EncryptJS\\game-release.apk"
-ENCRYPT_FILE_PATH = "F:\\bx_game_TrucoKing_mjb_2\\EncryptJS\\gamehall.mp3"
+ZIP_PATH = "F:\\bx_game_TrucoKing_mjb_1\\EncryptJS\\game-release.apk"
+ENCRYPT_FILE_PATH = "F:\\bx_game_TrucoKing_mjb_1\\EncryptJS\\klakw.mp3"
 
 def del_dir(srcPath):
     src_dir = os.listdir(srcPath)

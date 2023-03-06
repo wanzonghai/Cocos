@@ -28,7 +28,7 @@ import com.facebook.share.widget.MessageDialog;
 import com.facebook.share.widget.ShareDialog;
 
 import org.cocos2dx.lib.Cocos2dxLuaJavaBridge;
-import org.cocos2dx.lua.AppPokerActivity;
+import game.poker.AppPokerActivity;
 import org.json.JSONException;
 import org.json.JSONObject;
 

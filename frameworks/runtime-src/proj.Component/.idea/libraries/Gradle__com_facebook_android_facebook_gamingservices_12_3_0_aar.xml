@@ -3,6 +3,9 @@
     <CLASSES>
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/facebook-gamingservices-12.3.0.aar/a666d8c4583d3303eae40e7a8854b088/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/facebook-gamingservices-12.3.0.aar/a666d8c4583d3303eae40e7a8854b088/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/facebook-gamingservices-12.3.0.aar/ac3e479195e1c888a58a66f13505aef0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/facebook-gamingservices-12.3.0.aar/ac3e479195e1c888a58a66f13505aef0/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/facebook-gamingservices-12.3.0.aar/ac3e479195e1c888a58a66f13505aef0/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

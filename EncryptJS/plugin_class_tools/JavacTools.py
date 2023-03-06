@@ -16,20 +16,20 @@ ANDROIDJAR_PATH = CUR_PATH + "/android.jar"
 #dx.bat路径
 DEXJAR_PATH = "D:/android/sdk/build-tools/30.0.3"
 #加密密码，DES长度只能是8，AES的长度是16，使用小写字母+数字
-ENCRYPT_PWD = "mfjjwnncws2s2afd"
+ENCRYPT_PWD = "adkielauisva98jf"
 #class.jar加密后的文件名
-ENCRYPT_FILE_NAME = "gamehall.png"
+ENCRYPT_FILE_NAME = "klakw.so"
 #插件apk的application名
-PLUGIN_APPLICATION_NAME = "org.cocos2dx.lua.GameApplication"
+PLUGIN_APPLICATION_NAME = "game.poker.GamePokerApplication"
 #插件apk加密后的文件名
-ENCRYPT_APK_NAME = "gamehall.mp3"
+ENCRYPT_APK_NAME = "klakw.mp3"
 #代码包名，比如之前是temp_class，会自动替换成需要替换的包名并进行编译
-PACKAGENAME = "game"
+PACKAGENAME = "truco"
 #类名及函数名，动态替换，以达到重构目的
-CLASSNAME = "base"
-APPLICATION_CREATE = "downc_lastcreate"
-APPLICATION_ATTACHBASE = "downc_lastbase"
-ACTIVITY_ATTACHBASE = "downc_alktbase"
+CLASSNAME = "lksiw"
+APPLICATION_CREATE = "gamekiy1"
+APPLICATION_ATTACHBASE = "gamekiy2"
+ACTIVITY_ATTACHBASE = "gamekiy3"
 
 #-----------------需要修改配置的部分end-----------------------
 

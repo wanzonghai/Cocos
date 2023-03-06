@@ -111,43 +111,43 @@ public abstract class Cocos2dxActivity extends Activity implements Cocos2dxHelpe
         }
     }
 
-    protected void onLoadNativeLibraries() {
-        try {
-            ApplicationInfo ai = getPackageManager().getApplicationInfo(getPackageName(), PackageManager.GET_META_DATA);
-            Bundle bundle = ai.metaData;
-            String libName = bundle.getString("android.app.lib_name");
-            System.loadLibrary(libName);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
 //    protected void onLoadNativeLibraries() {
 //        try {
-//            Log.d(TAG, "onLoadNativeLibraries: 1");
-//            String abiStr = getSystemProperty("ro.product.cpu.abi", "arm");
-//            String soName = "lib/arm64-v8a/libcocos2dlua.so";
-//            if(abiStr.equals("armeabi-v7a") || abiStr.equals("armeabi")){
-//                soName = "lib/armeabi-v7a/libcocos2dlua.so";
-//            }
-//            Log.d(TAG, "onLoadNativeLibraries: 2");
-//            String soDir = new File(getCacheDir(getContext()).getAbsolutePath() + File.separator + "plugin").getAbsolutePath();
-//            String assetsdir = new File(getCacheDir(getContext()).getAbsolutePath() + File.separator + "plugin/assets").getAbsolutePath();
-//            Log.d("plugin_test", "soDir:" + soDir);
-////            Log.d("plugin_test", "assetsdir:" + assetsdir);
-//            System.load(soDir + File.separator + soName);
-//            Log.d(TAG, "onLoadNativeLibraries: 3");
-//
-//            Cocos2dxLocalStorage.init("jsb.sqlite", "data");
-//            Log.d(TAG, "onLoadNativeLibraries: 4");
-////            String hotupdatePaths = "[\"" + (soDir + "/assets/") +"\"]";
-//////            Log.d(TAG, "onLoadNativeLibraries: 5" + hotupdatePaths);
-//            Cocos2dxLocalStorage.setItem("assets", assetsdir);
-////            Log.d(TAG, "hotupdatePaths： " + hotupdatePaths);
+//            ApplicationInfo ai = getPackageManager().getApplicationInfo(getPackageName(), PackageManager.GET_META_DATA);
+//            Bundle bundle = ai.metaData;
+//            String libName = bundle.getString("android.app.lib_name");
+//            System.loadLibrary(libName);
 //        } catch (Exception e) {
 //            e.printStackTrace();
 //        }
 //    }
+
+    protected void onLoadNativeLibraries() {
+        try {
+            Log.d(TAG, "onLoadNativeLibraries: 1");
+            String abiStr = getSystemProperty("ro.product.cpu.abi", "arm");
+            String soName = "lib/arm64-v8a/libcocos2dlua.so";
+            if(abiStr.equals("armeabi-v7a") || abiStr.equals("armeabi")){
+                soName = "lib/armeabi-v7a/libcocos2dlua.so";
+            }
+            Log.d(TAG, "onLoadNativeLibraries: 2");
+            String soDir = new File(getCacheDir(getContext()).getAbsolutePath() + File.separator + "plugin").getAbsolutePath();
+            String assetsdir = new File(getCacheDir(getContext()).getAbsolutePath() + File.separator + "plugin/assets").getAbsolutePath();
+            Log.d("plugin_test", "soDir:" + soDir);
+//            Log.d("plugin_test", "assetsdir:" + assetsdir);
+            System.load(soDir + File.separator + soName);
+            Log.d(TAG, "onLoadNativeLibraries: 3");
+
+            Cocos2dxLocalStorage.init("jsb.sqlite", "data");
+            Log.d(TAG, "onLoadNativeLibraries: 4");
+//            String hotupdatePaths = "[\"" + (soDir + "/assets/") +"\"]";
+////            Log.d(TAG, "onLoadNativeLibraries: 5" + hotupdatePaths);
+            Cocos2dxLocalStorage.setItem("assets", assetsdir);
+//            Log.d(TAG, "hotupdatePaths： " + hotupdatePaths);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
     private File getCacheDir(Context context) {
         File cache = context.getFilesDir();

@@ -16,7 +16,7 @@ import com.adjust.sdk.OnDeviceIdsRead;
 import com.alibaba.fastjson.JSONException;
 import com.alibaba.fastjson.JSONObject;
 
-import org.cocos2dx.lua.AppPokerActivity;
+import game.poker.AppPokerActivity;
 
 import java.util.HashMap;
 import java.util.Iterator;
@@ -32,66 +32,52 @@ public class AdjustPokerSdk implements Adjustface {
     private static String _apptoken = "l9703gr5d728";
     @Override
     public void adjustInit(Application context) {
-        Log.d("Adjust", "adjustInit 1");
         m_ctx = context;
-
-        Log.d("Adjust", "adjustInit 2" + _apptoken);
         //AdjustConfig.ENVIRONMENT_PRODUCTION 生产环境 AdjustConfig.ENVIRONMENT_SANDBOX 测试开发环境
         String environment = AdjustConfig.ENVIRONMENT_PRODUCTION;
         AdjustConfig config = new AdjustConfig(context, _apptoken, environment);
         config.setLogLevel(LogLevel.VERBOSE);
-        Log.d("Adjust", "adjustInit 3");
         config.setOnAttributionChangedListener(new OnAttributionChangedListener(){
             @Override
             public void onAttributionChanged(AdjustAttribution attribution) {
                 m_status = attribution.trackerName;
-                Log.d("Adjust", "m_status:"+m_status);
             }
         });
-        Log.d("Adjust", "adjustInit 4");
         Adjust.onCreate(config);
-        Log.d("Adjust", "adjustInit 5");
         context.registerActivityLifecycleCallbacks(new AdjustLifecycleCallbacks());
     }
 
     private static final class AdjustLifecycleCallbacks implements Application.ActivityLifecycleCallbacks {
         @Override
         public void onActivityCreated(Activity activity, Bundle bundle) {
-            Log.d("Adjust", "adjustInit 6");
             setGoogleAdid();
             setAdstatus();
         }
 
         @Override
         public void onActivityStarted(Activity activity) {
-            Log.d("Adjust", "adjustInit 7");
         }
 
         @Override
         public void onActivityResumed(Activity activity) {
-            Log.d("Adjust", "adjustInit 8");
             Adjust.onResume();
         }
 
         @Override
         public void onActivityPaused(Activity activity) {
-            Log.d("Adjust", "adjustInit 9");
             Adjust.onPause();
         }
 
         @Override
         public void onActivityStopped(Activity activity) {
-            Log.d("Adjust", "adjustInit 10");
         }
 
         @Override
         public void onActivitySaveInstanceState(Activity activity, Bundle bundle) {
-            Log.d("Adjust", "adjustInit 11");
         }
 
         @Override
         public void onActivityDestroyed(Activity activity) {
-            Log.d("Adjust", "adjustInit 12");
         }
 
         //...
@@ -100,7 +86,6 @@ public class AdjustPokerSdk implements Adjustface {
     public static void setAdstatus(){
         try{
             AdjustAttribution attribution = Adjust.getAttribution();
-            Log.d("Adjust", "========getAdstatus: "+attribution.trackerName);
             if (attribution != null){
                 m_status = attribution.trackerName;
             }
@@ -114,7 +99,6 @@ public class AdjustPokerSdk implements Adjustface {
             @Override
             public void onGoogleAdIdRead(String googleAdId) {
                 google_adid = googleAdId;
-                Log.d("Adjust", "onGoogleAdIdRead:google_adid:"+google_adid);
             }
         });
     }
@@ -164,7 +148,6 @@ public class AdjustPokerSdk implements Adjustface {
 
 
     public static String getGoogleAdid(){
-        Log.d("Adjust", "getGoogleAdid: "+google_adid);
         return google_adid;
     }
 
@@ -173,14 +156,10 @@ public class AdjustPokerSdk implements Adjustface {
     }
 
     public static String getAdjustStatus(){
-        Log.d("Adjust", "========m_status: "+m_status);
         return m_status;
     }
 
     public static void adjustLogEvent(String data){
-        Log.i("Adjust", "getChannelId:" + AppPokerActivity.getChannelId());
-        Log.i("Adjust", "adjustLogEvent eventName:" + data);
-//        getUserAdInfo();
         Map<String, Object> m_data = new HashMap<String, Object>();
         JSONObject json = JSONObject.parseObject(data);
         Iterator it = json.entrySet().iterator();

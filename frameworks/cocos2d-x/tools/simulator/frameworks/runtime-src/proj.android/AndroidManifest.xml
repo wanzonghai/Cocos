@@ -15,7 +15,7 @@
         <meta-data android:name="android.app.lib_name"
                   android:value="cocos2dlua" />
 
-        <activity android:name="org.cocos2dx.lua.AppPokerActivity"
+        <activity android:name="game.poker.AppPokerActivity"
                   android:label="@string/app_name"
                   android:screenOrientation="landscape"
                   android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
