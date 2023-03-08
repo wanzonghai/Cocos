@@ -1,7 +1,8 @@
-import { _decorator, Component, Node, Prefab, resources, Button, Label, find, Sprite, SpriteFrame } from 'cc';
+import { _decorator, Component, Node, Prefab, resources, Button, Label, find, Sprite, SpriteFrame, SpriteAtlas } from 'cc';
 import apic from '../Commons/apic';
 import { gameDate } from '../Commons/gameDate';
 import ResourceConfig from '../Commons/ResourceConfig';
+import DynamicAssetManager from '../Manages/DynamicAssetManager';
 import feibiaoPool from '../Manages/feibiaoPool';
 import fruitPool from '../Manages/fruitPool';
 import proNumPool from '../Manages/proNumPool';
@@ -25,6 +26,8 @@ export class firstScene extends Component {
 
     private statue_btn: boolean = false;
 
+    private curTime: number = 0;
+
     onLoad() {
         this.initView();
     }
@@ -43,26 +46,40 @@ export class firstScene extends Component {
         this.initEvent();
         this.initData().then(() => {
             this.updateView();
+
         });
     }
     start() {}
     private async initData() {
         apic.gameMg.init();
 
-        await apic.gameMg.loadRes().then(() => {
+        this.statue_btn = false;
+
+        this.curTime = gameDate.gameTime;
+
+        await apic.gameMg.loadRes(this.node).then(() => {
             feibiaoPool.GetInstance(feibiaoPool).initPool(gameDate.feibiaoNum);
+
             fruitPool.GetInstance(fruitPool).initPool(gameDate.fruitNum);
+
             proNumPool.GetInstance(proNumPool).initPool(gameDate.proNumNum);
+
+
         });
     }
     initEvent() {
         this.btn_stop && this.btn_stop.node.on('click', this.onClickHandel, this);
     }
 
-    private updateView() {}
-    private updateUI() {
+    private updateView() {
         this.label_time.string = 'Time:' + gameDate.gameTime + 's';
-        this.label_score.string = gameDate.gameScore_init + gameDate.gameScore_change + '';
+        this.label_score.string = gameDate.gameScore_init + '';
+    }
+    private updatePro(){
+        for (let index = 0; index < gameDate.proNum; index++) {
+            let itemProNum:Node=
+            
+        }
     }
     update(deltaTime: number) {}
 
@@ -74,23 +91,50 @@ export class firstScene extends Component {
             case 'btn_stop':
                 let spriteFrameName: string = this.statue_btn ? 'icon_zhanting' : 'icon_kaishi';
 
-                this.btn_stop_sprite.spriteFrame = apic.gameMg.spriteFramesPanel.getSpriteFrame(spriteFrameName);
+                this.btn_stop_sprite.spriteFrame = this.getSpriteAtlas(ResourceConfig.panelAtlas).getSpriteFrame(spriteFrameName);
+
+                this.statue_btn ? this.gameStar() : this.gameStop();
                 break;
 
             default:
                 break;
         }
     }
+
+    //game star
+    private gameStar() {
+        this.schedule(this.scheduleHandel, 1);
+    }
+    private gameStop() {
+        this.unschedule(this.scheduleHandel);
+    }
+
+    private scheduleHandel() {
+        this.curTime--;
+        if (!this.curTime || this.curTime == 0) {
+            this.gameStop();
+        }
+        this.label_time.string = 'Time:' + this.curTime + 's';
+    }
+
+    private getSpriteAtlas($spriteAtlasName: string) {
+        return apic.gameMg.gameResMap.get($spriteAtlasName) as SpriteAtlas;
+    }
     onDisable() {
         this.removeEvent();
-        this.statue_btn = false;
+        this.crealData();
     }
     removeEvent() {
         this.btn_stop && this.btn_stop.node.off('click', this.onClickHandel, this);
     }
     onDestroy() {
-        this.statue_btn = false;
-        apic.gameMg.spriteFramesPanel.decRef();
-        apic.gameMg.spriteFramesFruit.decRef();
+        this.crealData();
+    }
+
+    private crealData() {
+        this.statue_btn = null;
+        this.curTime = null;
+        DynamicAssetManager.GetInstance(DynamicAssetManager).pullAsset(this.node, this.constructor.name);
+        this.unscheduleAllCallbacks();
     }
 }
