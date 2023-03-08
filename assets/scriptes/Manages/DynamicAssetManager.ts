@@ -24,33 +24,39 @@ export default class DynamicAssetManager extends Singleton<DynamicAssetManager> 
 
     /**
      * 动态加载资源(可以同时加载多个资源)
-     * @param node
-     * @param url
-     * @param callBackFun
+     * @param node 加载的节点 作为托管驻点
+     * @param url 资源路径
+     * @param callBackFun 加载完成返回
      */
     public load(node: Node, url: string | string[], assetType: typeof Asset, callBackFun: Function) {
-        if (node && url) {
-            if (Array.isArray(url))
-                resources.load(url, assetType, (err, assets: Asset[]) => {
-                    if (err) {
-                        console.error(err.message || err);
-                        return;
-                    }
-                    if (this.pushAsset(node, assets)) {
-                        callBackFun(assets);
-                    }
-                });
-            else
-                resources.load(url, assetType, (err, asset: Asset) => {
-                    if (err) {
-                        console.error(err.message || err);
-                        return;
-                    }
-                    if (this.pushAsset(node, asset)) {
-                        callBackFun(asset);
-                    }
-                });
-        }
+        return new Promise((resolve, reject) => {
+            if (node && url) {
+                if (Array.isArray(url))
+                    resources.load(url, assetType, (err, assets: Asset[]) => {
+                        if (err) {
+                            console.error(err.message || err);
+                            reject(err);
+                            return;
+                        }
+                        if (this.pushAsset(node, assets)) {
+                            callBackFun(assets);
+                            resolve(assets);
+                        }
+                    });
+                else
+                    resources.load(url, assetType, (err, asset: Asset) => {
+                        if (err) {
+                            console.error(err.message || err);
+                            reject(err);
+                            return;
+                        }
+                        if (this.pushAsset(node, asset)) {
+                            callBackFun(asset);
+                            resolve(asset);
+                        }
+                    });
+            }
+        });
     }
 
     /**
@@ -193,7 +199,7 @@ export default class DynamicAssetManager extends Singleton<DynamicAssetManager> 
             return false;
         }
     }
-
+    //增加计数
     private extracted(asset: Asset, nodeId: string) {
         let assetArray: Asset[] = this._assetMap.get(nodeId);
         if (!assetArray) {
