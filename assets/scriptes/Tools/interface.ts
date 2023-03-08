@@ -1,12 +1,9 @@
-export interface IPlayerInfo{
-    /**name */
-    name?: string;
+export interface IPlayerData{
+    /**proNum */
+    proNum?: number;
     /**score */
     score?: number;
-    /**avater */
-    avatar?: string;
 
-    adree?: number;
     /***.... */
 }
 /**

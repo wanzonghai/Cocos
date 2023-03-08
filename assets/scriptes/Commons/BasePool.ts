@@ -10,7 +10,8 @@ export default class BasePool extends Singleton<BasePool>{
     //预制体url 子类实现赋值
    public prefabUrl: string;
     //(可选)对象脚本组件 子类实现赋值
-   public script: string;
+   
+   public script: any;
     //(可选)初始化池量 子类实现赋值
    public poolSize: number = 10;
     //(可选)组件名字
@@ -45,6 +46,7 @@ export default class BasePool extends Singleton<BasePool>{
      * 获取成员对象
      */
     getNode() {
+   
         let obj:Node;
         if (this._pool.size() > 0) {
             obj = this._pool.get();
@@ -56,6 +58,7 @@ export default class BasePool extends Singleton<BasePool>{
         if (!obj) {
             throw new Error(`BasePool Tip: 获取${this.MemberFlag}Pool 成员失败`);
         }
+        obj.active=true;
         return obj;
     }
  
@@ -64,7 +67,8 @@ export default class BasePool extends Singleton<BasePool>{
      * 回收对象接口
      * @param obj 回收对象
      */
-    putNode(obj:Node) {
+    putNode(obj: Node) {
+        obj.active=false;
         if (this.isPoolMember(obj)) {
             //回收对象
             this._pool.put(obj);

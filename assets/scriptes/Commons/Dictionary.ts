@@ -72,5 +72,5 @@ export class Dictionary<KT, VT> {
     //获取Values[]
 	public GetValues(): VT[] {
 		return this.values;
-	}
+    }
 }

@@ -1,46 +1,57 @@
-import { instantiate, Node, Prefab } from "cc";
-import apic from "../Commons/apic";
-import { IPlayerInfo } from "../Tools/interface";
-import { Singleton } from "../Tools/singleton";
+import { assert, Component, instantiate, Node, Prefab, SpriteAtlas, SpriteComponent } from 'cc';
+import apic from '../Commons/apic';
+import { gameDate } from '../Commons/gameDate';
+import { IPlayerData } from '../Tools/interface';
+import { Singleton } from '../Tools/singleton';
 
 export default class manager_game extends Singleton<manager_game> {
-    public itemPreType1: Prefab = null;
-    public itemPreType2: Prefab = null;
+    public itemPreTypeArray: Prefab[] = [];
 
-    public playerInfo: IPlayerInfo = null;
+    public spriteFramesPanel: SpriteAtlas = null;
+    public spriteFramesFruit: SpriteAtlas = null;
+
+    public playerData: IPlayerData = null;
 
     public isGameFinish: boolean = false;
 
     /**初始化 */
     public init() {
-        this.itemPreType1 = null;
-        this.itemPreType2 = null;
-        apic.poolMg.init()
-        apic.pokerMg.init();
-        apic.aiMg.init();
-        this.playerInfo = { name: 'Timtim',score:0,avatar: 'bg05',adree:1};
-
+        this.itemPreTypeArray.length = 0;
+        this.spriteFramesPanel = null;
+        this.spriteFramesFruit = null;
+        this.playerData = { proNum: gameDate.proNum, score: gameDate.gameScore_init };
+        this.isGameFinish = false;
     }
-    public loadRes($path:string) {
+    public loadRes() {
+        //bx_mjb_zz_trocokingtrucoonline
+        //fruitsAltals.plist
         return new Promise<void>((resolve, reject) => {
-            // apic.resMg.loadResourceRes().then((pre) => {
-               
-            // })
-           
-        })
-        
-    }
-
-    public creater(itemPre) {
-        if (!itemPre) return;
-        // if (this.itemPokerNode.length > 0) this.itemPokerNode.length = 0;
-        return  apic.poolMg.createEnemy();
-    }
-
-    public remove(enemy: Node) {   
-      
-        apic.poolMg.pullEnemy(enemy);
+            apic.resMg.
+            apic.resMg
+                .load('textures/panelAtlas')
+                .then((atlasPanel: SpriteAtlas) => {
+                    this.spriteFramesPanel = atlasPanel as SpriteAtlas;
+                    apic.resMg
+                        .loadResourceRes('textures/fruitsAltals')
+                        .then((atlasFruit: SpriteAtlas) => {
+                            this.spriteFramesFruit = atlasFruit as SpriteAtlas;
+                            console.log(atlasFruit.getSpriteFrame('png_shuiguo1'));
+                            // apic.resMg.loadResourceMoreRes('prefabs').then((preArray: Prefab[]) => {
+                            //         this.itemPreTypeArray = preArray;
+                            resolve();
+                            // }).catch((err) => {
+                            //         console.log(err.message);
+                            // });;
+                        })
+                        .catch((err) => {
+                            reject(err);
+                            console.log(err.message);
+                        });
+                })
+                .catch((err) => {
+                    reject(err);
+                    console.log(err.message);
+                });
+        });
     }
 }
-
-
